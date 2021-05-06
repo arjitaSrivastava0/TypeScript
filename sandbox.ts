@@ -1,19 +1,36 @@
-let character = 'mario';
-let age = 30;
-let isBlackBelt = false;
+let character: string = 'mario';
+let age: number;
+let isLoggedIn: boolean;
 
-// character = 20;
-character = 'luigi';
+// age = 'luigi';
+age = 30;
 
-// age = 'yoshi';
-age = 40;
+// isLoggedIn = 25;
+isLoggedIn = true;
 
-// isBlackBelt = 'yes';
-isBlackBelt = true;
+// arrays
+let ninjas: string[] = [];
 
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+ninjas.push('ryu');
+ninjas.push('chun-li');
+console.log(ninjas);
+
+// union types
+let mixed: (string|number|boolean)[] = [];
+mixed.push('hello');
+mixed.push(false);
+mixed.push(20);
+console.log(mixed);
+
+let uid: string|number;
+
+// objects
+let ninjaOne: object;
+ninjaOne = { name: 'yoshi', age: 30 };
+
+let ninjaTwo: {
+  name: string,
+  age: number,
+  beltColour: string
 };
-
-// console.log(area('hello'));
-console.log(circ(7.5));
+ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
