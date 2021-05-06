@@ -1,12 +1,19 @@
-//basic typescript
+let character = 'mario';
+let age = 30;
+let isBlackBelt = false;
 
+// character = 20;
+character = 'luigi';
 
-const character = 'mario';
+// age = 'yoshi';
+age = 40;
 
-console.log(character);
+// isBlackBelt = 'yes';
+isBlackBelt = true;
 
-const inputs = document.querySelectorAll('input');
+const circ = (diameter: number) => {
+  return diameter * Math.PI;
+};
 
-inputs.forEach(input => {
-  console.log(input);
-});
+// console.log(area('hello'));
+console.log(circ(7.5));
