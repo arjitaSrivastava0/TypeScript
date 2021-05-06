@@ -1,36 +1,28 @@
-import { Invoice } from './classes/Invoice.js';
-import { Payment } from './classes/Payment.js';
-import { ListTemplate } from './classes/ListTemplate.js';
-const form = document.querySelector('.new-item-form');
-// inputs
-const type = document.querySelector('#type');
-const tofrom = document.querySelector('#tofrom');
-const details = document.querySelector('#details');
-const amount = document.querySelector('#amount');
-// list template instance
-const ul = document.querySelector('ul');
-const list = new ListTemplate(ul);
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let values;
-    values = [tofrom.value, details.value, amount.valueAsNumber];
-    let doc;
-    if (type.value === 'invoice') {
-        doc = new Invoice(...values);
-    }
-    else {
-        doc = new Payment(...values);
-    }
-    list.render(doc, type.value, 'end');
-});
-// TUPLES
-let arr = ['ryu', 25, true];
-arr[0] = false;
-arr[1] = 'yoshi';
-arr = [30, false, 'yoshi'];
-let tup = ['ryu', 25, true];
-// tup[0] = false;
-tup[0] = 'ken';
-let student;
-//student = [23564, 'chun-li'];
-student = ['chun-li', 23564];
+"use strict";
+//spread operator
+const hobbies = ['Sports', 'Cooking'];
+const activeHobbies = ['Hiking'];
+//pull all the elements in the array hobboes and add them as a list 
+//of individual values in the place where we use operator
+//if we need comma separated list of values we can use spread operator
+activeHobbies.push(...hobbies);
+const person = {
+    firstName: 'Arjita',
+    age: 23
+};
+const copied = Object.assign({}, person);
+console.log(copied);
+//Rest parameter
+//rest operator merge all incoming parameters into an array
+//of type any or we can explicitely pass the type
+const add = (...numbers) => {
+    return numbers.reduce((currResult, currValue) => {
+        return currResult + currValue;
+    }, 0);
+};
+console.log(add(3, 5, 3, 5, 2, 5, 2));
+//array and object destructuring
+const [hobby1, hobby2, ...remainigHobbies] = hobbies;
+console.log(hobbies, hobby1, hobby2);
+const { firstName, age } = person;
+console.log(firstName, age);

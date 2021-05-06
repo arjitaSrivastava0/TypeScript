@@ -1,46 +1,43 @@
-import { Invoice } from './classes/Invoice.js';
-import { Payment } from './classes/Payment.js';
-import { ListTemplate } from './classes/ListTemplate.js';
-import { HasFormatter } from './interfaces/HasFormatter.js';
+//spread operator
 
-const form = document.querySelector('.new-item-form') as HTMLFormElement;
+const hobbies = ['Sports', 'Cooking'];
+const activeHobbies = ['Hiking'];
 
-// inputs
-const type = document.querySelector('#type') as HTMLInputElement;
-const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
-const details = document.querySelector('#details') as HTMLInputElement;
-const amount = document.querySelector('#amount') as HTMLInputElement;
+//pull all the elements in the array hobboes and add them as a list 
+//of individual values in the place where we use operator
+//if we need comma separated list of values we can use spread operator
+activeHobbies.push(...hobbies);
 
-// list template instance
-const ul = document.querySelector('ul')!;
-const list = new ListTemplate(ul);
+const person = {
+  firstName: 'Arjita',
+  age: 23
+};
 
-form.addEventListener('submit', (e: Event) => {
-  e.preventDefault();
+const copied = { ...person};
+console.log(copied);
 
-  let values: [string, string, number];
-  values = [tofrom.value, details.value, amount.valueAsNumber];
 
-  let doc: HasFormatter;
-  if (type.value === 'invoice') {
-    doc = new Invoice(...values);
-  } else {
-    doc = new Payment(...values);
-  }
-  
-  list.render(doc, type.value, 'end');
-});
+//Rest parameter
 
-// TUPLES
-let arr = ['ryu', 25, true];
-arr[0] = false;
-arr[1] = 'yoshi';
-arr = [30, false, 'yoshi'];
+//rest operator merge all incoming parameters into an array
+//of type any or we can explicitely pass the type
+const add = (...numbers: number[]) => {
+  return numbers.reduce((currResult, currValue) => { 
+    return currResult+currValue;
+  }, 0);
+}
 
-let tup: [string, number, boolean] = ['ryu', 25, true];
-// tup[0] = false;
-tup[0] = 'ken';
+console.log(add(3,5,3,5,2,5,2));
 
-let student: [string, number];
-//student = [23564, 'chun-li'];
-student = ['chun-li', 23564];
+//array and object destructuring
+
+const [hobby1, hobby2, ...remainigHobbies] = hobbies;
+
+console.log(hobbies, hobby1, hobby2);
+
+const { firstName, age } = person;
+console.log(firstName, age);
+
+
+
+
