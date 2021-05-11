@@ -1,43 +1,57 @@
-//spread operator
+import { Invoice } from './classes/Invoice.js';
 
-const hobbies = ['Sports', 'Cooking'];
-const activeHobbies = ['Hiking'];
-
-//pull all the elements in the array hobboes and add them as a list 
-//of individual values in the place where we use operator
-//if we need comma separated list of values we can use spread operator
-activeHobbies.push(...hobbies);
-
-const person = {
-  firstName: 'Arjita',
-  age: 23
-};
-
-const copied = { ...person};
-console.log(copied);
-
-
-//Rest parameter
-
-//rest operator merge all incoming parameters into an array
-//of type any or we can explicitely pass the type
-const add = (...numbers: number[]) => {
-  return numbers.reduce((currResult, currValue) => { 
-    return currResult+currValue;
-  }, 0);
+// interfaces
+export interface IsPerson {
+  name: string;
+  age?: number;
+  speak(a: string): void;
+  spend(a: number): number;
 }
 
-console.log(add(3,5,3,5,2,5,2));
+const me: IsPerson = {
+  name: 'shaun',
+  //age: 30,
+  speak(text: string): void {
+    console.log(text);
+  },
+  spend(amount: number): number {
+    console.log('I spent ', amount);
+    return amount;
+  },
+};
 
-//array and object destructuring
+console.log(me);
+me.speak('hello, world');
 
-const [hobby1, hobby2, ...remainigHobbies] = hobbies;
+const greetPerson = (person: IsPerson): void => {
+  console.log('hello ', person.name);
+}
 
-console.log(hobbies, hobby1, hobby2);
+greetPerson(me);
+//greetPerson({name: 'shaun'});
 
-const { firstName, age } = person;
-console.log(firstName, age);
+const form = document.querySelector('.new-item-form') as HTMLFormElement;
+console.log(form.children);
+
+// inputs
+const type = document.querySelector('#type') as HTMLInputElement;
+const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
+const details = document.querySelector('#details') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement;
+
+form.addEventListener('submit', (e: Event) => {
+  e.preventDefault();
+
+  console.log(
+    type.value, 
+    tofrom.value, 
+    details.value, 
+    amount.valueAsNumber
+  );
+});
 
 
 
 
+
+///
