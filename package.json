@@ -1,5 +1,5 @@
 {
-  "name": "understanding~typescript",
+  "name": "understandingtypescript",
   "version": "1.0.0",
   "description": "",
   "main": "sandbox.js",
@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/arjitaSrivastava0/TypeScript/issues"
   },
-  "homepage": "https://github.com/arjitaSrivastava0/TypeScript#readme"
+  "homepage": "https://github.com/arjitaSrivastava0/TypeScript#readme",
+  "dependencies": {}
 }
