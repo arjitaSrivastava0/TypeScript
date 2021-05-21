@@ -1,0 +1,26 @@
+{
+  "name": "understanding~typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sandbox.js",
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack": "^4.41.2",
+    "typescript": "^3.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjitaSrivastava0/TypeScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjitaSrivastava0/TypeScript/issues"
+  },
+  "homepage": "https://github.com/arjitaSrivastava0/TypeScript#readme"
+}
