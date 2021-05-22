@@ -4,14 +4,18 @@
   "description": "",
   "main": "sandbox.js",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "lite-server": "^2.5.4",
     "ts-loader": "^6.2.1",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
+    "typescript": "^3.7.2",
     "webpack": "^4.41.2",
-    "typescript": "^3.7.2"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",

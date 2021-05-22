@@ -1,8 +1,8 @@
 
-import {Project} from "../models/Project.js";
-import { Draggable } from "../models/DragDrop.js";
-import {autoBind} from "../decorators/AutobindDecorator.js";
-import {Component} from "../components/Component.js";
+import {Project} from "../models/Project";
+import { Draggable } from "../models/DragDrop";
+import {autoBind} from "../decorators/AutobindDecorator";
+import {Component} from "../components/Component";
 
 // namespace App {
     //ProjectItem class
