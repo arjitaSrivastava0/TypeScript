@@ -4,6 +4,7 @@
   "description": "",
   "main": "sandbox.js",
   "devDependencies": {
+    "@types/lodash": "^4.14.146",
     "clean-webpack-plugin": "^3.0.0",
     "lite-server": "^2.5.4",
     "ts-loader": "^6.2.1",
@@ -27,5 +28,10 @@
     "url": "https://github.com/arjitaSrivastava0/TypeScript/issues"
   },
   "homepage": "https://github.com/arjitaSrivastava0/TypeScript#readme",
-  "dependencies": {}
+  "dependencies": {
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.13.1",
+    "lodash": "^4.17.15",
+    "reflect-metadata": "^0.1.13"
+  }
 }

@@ -1,7 +1,4 @@
-//the below 3 slashes are speacial type of syntax that ts understands
-import { ProjectInput } from "./components/ProjectInput.js";
-import { ProjectList } from "./components/ProjectList.js";
-new ProjectInput();
-new ProjectList("active");
-new ProjectList("finished");
+import _ from "lodash";
+console.log(_.shuffle([1, 3, 2]));
+console.log(GLOBAL);
 //# sourceMappingURL=app.js.map
